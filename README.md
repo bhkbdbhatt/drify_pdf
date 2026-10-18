@@ -27,7 +27,7 @@ drift_pdf/
 
 ### 1. Start Backend
 
-`ash
+`bash
 cd drift_backend
 python -m venv .venv
 # Windows
@@ -47,7 +47,7 @@ DATABASE_URL=sqlite:///./drift.db
 `
 
 Run server:
-`ash
+`bash
 uvicorn app.main:app --reload
 `
 
@@ -55,7 +55,7 @@ API docs: http://127.0.0.1:8000/docs | Health: http://127.0.0.1:8000/health
 
 ### 2. Start Frontend
 
-`ash
+`bash
 cd drift_ui
 npm install
 npm run dev
