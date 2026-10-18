@@ -1,0 +1,14 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+sqlalchemy>=2.0.30
+pydantic>=2.8
+pydantic-settings>=2.4
+alembic>=1.13
+python-multipart>=0.0.9
+aiofiles>=24.1
+openai>=1.40
+anthropic>=0.34
+pypdf>=5.0
+psycopg[binary]>=3.2
+pytest>=8.3
+httpx>=0.27
