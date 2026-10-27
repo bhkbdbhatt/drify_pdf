@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drift PDF - Measure LLM Output Drift</title>
+    <meta name="description" content="Drift PDF measures how consistently LLMs extract structured JSON from PDFs across runs. Detect parsing vs sampling variance with detailed drift analysis.">
+    <meta property="og:title" content="Drift PDF - Measure LLM Output Drift">
+    <meta property="og:description" content="Send the same PDF + prompt to an LLM multiple times, compute per-field consistency, diagnose drift sources.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <div class="nav__logo">D</div>
+                <span class="nav__title">Drift PDF</span>
+            </div>
+            <div class="nav__links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it works</a>
+                <a href="#sponsor">Sponsor</a>
+                <a href="https://github.com/bhargav-bhatt/drift_pdf" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://driftpdf.app" class="nav__cta">Live Demo</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Measure LLM Output Drift with Precision</h1>
+                    <p class="hero__subtitle">Send the same PDF + prompt to an LLM multiple times, get per-field consistency stats, and diagnose whether variance comes from parsing or sampling.</p>
+                    <div class="hero__actions">
+                        <a href="https://github.com/bhargav-bhatt/drift_pdf" target="_blank" rel="noopener" class="btn btn--primary">View on GitHub</a>
+                        <a href="#sponsor" class="btn btn--secondary">Sponsor the Project</a>
+                    </div>
+                    <p class="hero__note">Self-host or deploy - MIT licensed</p>
+                </div>
+                <div class="hero__visual">
+                    <div class="card mockup">
+                        <div class="mockup__header">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                            <span class="mockup__title">Drift Analysis</span>
+                        </div>
+                        <div class="mockup__body">
+                            <div class="mockup__row">
+                                <span>invoice_number</span>
+                                <span class="badge badge--stable">Stable</span>
+                                <span>100% consistent</span>
+                            </div>
+                            <div class="mockup__row">
+                                <span>total_amount</span>
+                                <span class="badge badge--drift">Drift</span>
+                                <span>σ=2.34</span>
+                            </div>
+                            <div class="mockup__row">
+                                <span>line_items</span>
+                                <span class="badge badge--unstable">Unstable</span>
+                                <span>varies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section__header">
+                    <h2>Key Features</h2>
+                    <p>Built for LLM evaluation, benchmarking, and reliability testing</p>
+                </div>
+                <div class="features__grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🔁</div>
+                        <h3>Multi-run Evaluation</h3>
+                        <p>Run the same extraction N times with configurable runs and rate limiting.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">📊</div>
+                        <h3>Per-field Drift Analysis</h3>
+                        <p>Numeric variance, string edit distance, date ranges, and array consistency scoring.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🔍</div>
+                        <h3>Drift Diagnosis</h3>
+                        <p>Split variance into parsing vs sampling components to pinpoint the root cause.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">⚡</div>
+                        <h3>Live Progress</h3>
+                        <p>Real-time WebSocket updates as runs complete with detailed status tracking.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🆚</div>
+                        <h3>Task Comparison</h3>
+                        <p>Side-by-side comparison of different tasks/models with automated verdicts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🧾</div>
+                        <h3>Raw Run Inspection</h3>
+                        <p>View each LLM response and parsed JSON to debug inconsistencies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <div class="section__header">
+                    <h2>How it works</h2>
+                    <p>From PDF to drift report in minutes</p>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step__number">1</div>
+                        <div class="step__content">
+                            <h3>Upload PDF & Define Schema</h3>
+                            <p>Provide your PDF and extraction prompt/schema. Choose blackbox (extract from raw text) or parsed mode.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">2</div>
+                        <div class="step__content">
+                            <h3>Run Multiple Times</h3>
+                            <p>Send to your chosen model (OpenAI/Anthropic) N times with rate limiting.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">3</div>
+                        <div class="step__content">
+                            <h3>Analyze & Diagnose</h3>
+                            <p>Get per-field drift metrics, consistency scores, and diagnosis of variance sources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sponsor" class="sponsor">
+            <div class="container sponsor__container">
+                <div class="sponsor__content">
+                    <h2>Support Drift PDF Development</h2>
+                    <p>Drift PDF is open-source and MIT licensed. Your sponsorship helps maintain the project, add new features, and keep it free for everyone.</p>
+                    <div class="sponsor__grid">
+                        <a href="https://github.com/sponsors/bhk.bdbhatt" target="_blank" rel="noopener" class="sponsor-card">
+                            <span class="sponsor-card__icon">💖</span>
+                            <span class="sponsor-card__name">GitHub Sponsors</span>
+                            <span class="sponsor-card__desc">Recurring support</span>
+                        </a>
+                        <a href="https://ko-fi.com/" target="_blank" rel="noopener" class="sponsor-card">
+                            <span class="sponsor-card__icon">☕</span>
+                            <span class="sponsor-card__name">Ko-fi</span>
+                            <span class="sponsor-card__desc">One-time donation</span>
+                        </a>
+                        <a href="https://buymeacoffee.com/bhargavbhatt" target="_blank" rel="noopener" class="sponsor-card">
+                            <span class="sponsor-card__icon">☕</span>
+                            <span class="sponsor-card__name">Buy Me a Coffee</span>
+                            <span class="sponsor-card__desc">Buy a coffee</span>
+                        </a>
+                        <a href="https://opencollective.com/incognito-621471c5" target="_blank" rel="noopener" class="sponsor-card">
+                            <span class="sponsor-card__icon">🌐</span>
+                            <span class="sponsor-card__name">Open Collective</span>
+                            <span class="sponsor-card__desc">Transparent funding</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta__container">
+                <h2>Ready to measure LLM drift?</h2>
+                <p>Self-host in minutes with FastAPI + React, or contribute to make it better.</p>
+                <div class="cta__actions">
+                    <a href="https://github.com/bhargav-bhatt/drift_pdf" target="_blank" rel="noopener" class="btn btn--primary btn--large">Get Started on GitHub</a>
+                    <a href="#sponsor" class="btn btn--secondary btn--large">Become a Sponsor</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__brand">
+                <div class="nav__logo">D</div>
+                <span class="nav__title">Drift PDF</span>
+            </div>
+            <p class="footer__text">© 2026 Drift PDF. Released under the MIT License.</p>
+            <div class="footer__links">
+                <a href="https://github.com/bhargav-bhatt/drift_pdf" target="_blank" rel="noopener">GitHub</a>
+                <a href="#sponsor">Sponsor</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

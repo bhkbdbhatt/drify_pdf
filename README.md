@@ -96,6 +96,19 @@ Open http://localhost:5173
 
 See [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md). This project follows standard practices; run tests and lint/typecheck before submitting changes (as specified in the backend/frontend READMEs).
 
+## Marketing Site
+
+A static marketing/landing page is available in the [`site/`](./site/) directory, ready to be deployed to [Netlify](https://www.netlify.com/), [Vercel](https://vercel.com/), or any static host. It includes:
+- Feature overview and usage
+- Sponsorship links (GitHub Sponsors, Buy Me a Coffee, Open Collective, Ko-fi)
+- Call-to-action for GitHub repo
+
+Deployment configs are included: `netlify.toml`, `site/_redirects`, and `vercel.json`.
+
+## Sponsorship
+
+If you find Drift PDF useful, please consider sponsoring the project! See [FUNDING.yml](./FUNDING.yml) for all available platforms.
+
 ## License
 
-MIT License - see LICENSE file if present.
+MIT License - see [LICENSE](./LICENSE).
